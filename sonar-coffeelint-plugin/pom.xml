@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sonar.plugins</groupId>
+		<artifactId>sonar-coffeelint</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>sonar-coffeelint-plugin</artifactId>
+	<packaging>sonar-plugin</packaging>
+	<name>Sonar Coffeelint Plugin</name>
+	<description>Runs coffeelint on coffee script files</description>
+
+	<licenses>
+		<license>
+			<name>MIT</name>
+			<url>http://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-exec</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonar.plugins</groupId>
+			<artifactId>sonar-coffeelint-checks</artifactId>
+			<version>${version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.sonar</groupId>
+				<artifactId>sonar-packaging-maven-plugin</artifactId>
+				<version>1.13</version>
+				<extensions>true</extensions>
+				<configuration>
+					<pluginClass>org.sonar.plugins.coffeelint.CoffeelintPlugin</pluginClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sonar.plugins</groupId>
+		<artifactId>sonar-coffeelint</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>sonar-coffeelint2java</artifactId>
+	<name>Sonar coffeelint check generator</name>
+	<description>Generates sonar check java files from coffeelint rules</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.48</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.sonar</groupId>
+			<artifactId>sonar-plugin-api</artifactId>
+			<version>5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.3.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<id>build-dump</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includePluginDependencies>true</includePluginDependencies>
+					<mainClass>org.sonar.plugins.coffeelint2java.Coffeelint2Java</mainClass>
+					<arguments>
+						<argument>-o</argument>
+						<argument>${project.parent.basedir}/sonar-coffeelint-checks/src/main/java/org/sonar/plugins/coffeelint/checks</argument>
+						<argument>-p</argument>
+						<argument>org.sonar.plugins.coffeelint.checks</argument>
+						<argument>${project.basedir}/src/main/resources/rules</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

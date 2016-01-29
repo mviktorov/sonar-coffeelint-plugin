@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.sonar.plugins</groupId>
+		<artifactId>sonar-coffeelint</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>sonar-coffeelint-checks</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.sonar.plugins</groupId>
+			<artifactId>sonar-coffeelint2java</artifactId>
+			<version>${version}</version>
+		</dependency>
+	</dependencies>
+	<name>Sonar Coffeelint plugin checks</name>
+	<description>Contains all checks for the sonar-coffeelint plugin</description>
+</project>
