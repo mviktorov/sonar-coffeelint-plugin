@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-* Building a sonar plugin to analyse coffee script files via http://coffeelint.org
+* Building a sonar plugin to analyse coffee script files via http://coffeelint.org (v1.14.2)
 
 ### How do I get set up? ###
 
