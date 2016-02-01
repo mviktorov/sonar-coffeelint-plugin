@@ -11,6 +11,7 @@
 * plugin can be found under *sonar-coffeelint-plugin/target* 
 * http://coffeelint.org must be installed
 * install plugin in sonarqube
+* The plugin detects .coffee files in the source folder
 
 ### Modules ###
 * sonar-coffeelint2java: Converts .coffee rule files (from http://coffeelint.org) into sonarqube checks
