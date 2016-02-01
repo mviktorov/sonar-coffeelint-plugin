@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.sonar.plugins</groupId>
 	<artifactId>sonar-coffeelint</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -54,11 +54,27 @@
 	</dependencies>
 	<name>Sonar-Coffeelint</name>
 	<description>Sonarqube plugin to analyse coffeescript files based on http://coffeelint.org</description>
+	<url>https://github.com/dbac2002/sonar-coffeelint-plugin</url>
 	<organization>
 		<name>Cetrea</name>
 		<url>http://www.cetrea.com</url>
 	</organization>
+	<issueManagement>
+		<url>https://github.com/dbac2002/sonar-coffeelint-plugin/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 	<scm>
-		<developerConnection>dbac2002</developerConnection>
+		<url>https://github.com/dbac2002/sonar-coffeelint-plugin</url>
+		<connection>scm:git:git://github.com/dbac2002/sonar-coffeelint-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com/dbac2002/sonar-coffeelint-plugin.git</developerConnection>
 	</scm>
 </project>
