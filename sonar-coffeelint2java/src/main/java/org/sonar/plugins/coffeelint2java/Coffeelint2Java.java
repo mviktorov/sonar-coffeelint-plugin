@@ -89,7 +89,7 @@ public class Coffeelint2Java {
 
 	private void handleDirectory(Path ruleFile, StringJoiner stringJoiner) {
 		try {
-			PathMatcher pathMatcher = ruleFile.getFileSystem().getPathMatcher("glob:*.coffee");
+			PathMatcher pathMatcher = ruleFile.getFileSystem().getPathMatcher("glob:**/*.coffee");
 			Files.list(ruleFile).filter(pathMatcher::matches).forEach(path -> generateChecks(path, stringJoiner));
 		}
 		catch (IOException e) {
